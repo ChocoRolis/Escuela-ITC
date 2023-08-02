@@ -1,0 +1,138 @@
+%%-----------------------------%%
+%%----Comienza el preámbulo----%%
+%%-----------------------------%%
+
+%Tipo de documento
+\documentclass[]{article}
+
+%Paquetes
+\usepackage[spanish,es-tabla]{babel} %Uso del idioma español
+\usepackage[a4paper, total={7in, 9in}]{geometry} %Cambiar el tamaño del área impresa
+\usepackage{lipsum} %Genera el texto Lorem Ipsum
+\usepackage{xcolor} %Permite el uso de colores
+\usepackage{graphicx} %Manejo de imágenes
+\usepackage{hyperref} %Referencias cruzadas
+\usepackage{booktabs} %Uso de tablas con estilo de libro
+\usepackage{tabularx} %Uso de tablas
+\usepackage{float} %Uso de entornos flotantes como figure y table
+\usepackage{amsmath} %Uso de expresiones matemáticas
+
+%opening
+\title{Este es un título}
+\author{Este es un autor}
+\date{\today} %\today coloca la fecha del día de hoy, pero puedes escribir cualquier fecha
+
+%%----------------------------------%%
+%%-Comienza el cuerpo del documento-%%
+%%----------------------------------%%
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+ Este es un resumen. Si no necesitas un resumen, solo puedes quitar esta sección.
+\end{abstract}
+
+\section{Esta es una sección}
+\lipsum[1]
+
+\subsection{Esta es una subsección}
+\lipsum[2]
+
+\subsubsection{Esta es una subsubsección}
+\lipsum[3]
+
+\section{Esta es otra sección}
+\lipsum[4]
+
+\section{Estilos de fuente}
+
+Puedo escribir texto {\tiny pequeñitito}, {\footnotesize pequeñito}, {\small pequeñito}, normal, {\large grande}, {\Large más grande} y {\Huge enorme}.\\
+
+También puedo usar \textbf{negritas}, \textit{cursivas}, \underline{subrayado} y \textcolor{red}{cambiar el color de la fuente}. Lo último solo puedo hacerlo si en el preámbulo agrego el paquete \textbf{xcolor}.
+
+\section{Listas}
+También puedo escribir listas con viñetas:
+\begin{itemize}
+	\item Un elemento
+	\item Otro elemento
+	\item Otro elemento más
+\end{itemize}
+
+Además, puedo escribir listas enumeradas
+\begin{enumerate}
+	\item Un elemento
+	\item Otro elemento
+	\item Otro elemento más
+\end{enumerate}
+
+Puedo anidar listas
+\begin{enumerate}
+	\item Este es el primer paso que se compone de los dos siguientes
+	\begin{enumerate}
+		\item Componente 1
+		\item Componente 2
+	\end{enumerate}
+	\item Este es el segundo paso
+\end{enumerate}
+
+\section{Figuras}
+La Figura \ref{logo} muestra el logotipo de la Universidad de Monterrey.
+
+\begin{figure}[h] \centering 
+	\includegraphics[width=0.5\textwidth]{logo_udem}
+	\caption{Logotipo de la Universidad de Monterrey}
+	\label{logo}
+\end{figure}
+
+La Figura \ref{escudo} no aparece inmediatamente después de este texto porque no agregué [h] en el entorno \textbf{figure}. \LaTeX \: acomodará la figura en donde considere apropiado.
+\begin{figure} \centering 
+	\includegraphics[width=0.5\textwidth]{escudo_udem}
+	\caption{Escudo de la Universidad de Monterrey}
+	\label{escudo}
+\end{figure}
+
+\section{Tablas}
+La Tabla \ref{tabla_rara} tiene resultados extraños.
+
+\begin{table}[H]\centering
+	\begin{tabular}{ccccc}
+		\toprule		
+		Performance metric & EC & RLNI & RMD & RR \\ \midrule
+		ONVG & 3.75 & 3.33 & 2.50 & 3.67 \\ 
+		H & 0.50 & 0.49 & 0.50 & 0.49 \\ 
+		Execution time (s) & 1762.20 & 0.03 & 0.02 & 0.04 \\ \bottomrule
+	\end{tabular}
+	\caption{Average ONVG, H, and execution time values for instances of Class S}
+	\label{tabla_rara}
+\end{table}
+
+\section{Ecuaciones}
+Puedo escribir ecuaciones en línea $x^2$ o ecuaciones fuera de línea $$x^2$$.\\
+
+También puedo escribir ecuaciones enumeradas y con etiquetas como, por ejemplo, la Ecuación \eqref{integral_definida}.
+\begin{equation}\label{integral_definida}
+	\int_a^bf(x)dx
+\end{equation}
+
+Y es posible escribir modelos con más de una ecuación, como el que se muestra en las Ecuaciones \eqref{primera}--\eqref{ultima}
+\begin{eqnarray}
+	x^2 \label{primera} \\
+	\int_a^bf(x)dx \label{segunda} \\
+	x+y \label{ultima}
+\end{eqnarray}
+
+\subsection{Ejemplos de ecuaciones}
+\begin{eqnarray*}
+	\lim\limits_{x\rightarrow -1^{-}}f(x)\\
+	(-\infty,-\sqrt{2})\cup (\sqrt{2},\infty)\\
+	\sqrt[3]{x}\\
+	f(x)=\log_{10}\left(\frac{1+x}{1-x}\right)^{2}\\
+	\left(\frac{1}{4},\frac{\pi}{6}\right)\\
+	\int_{0}^{\pi}t\cos^{2}tdt\\
+	\int \theta \tan^{2}\theta d\theta 
+\end{eqnarray*}
+
+
+\end{document}
