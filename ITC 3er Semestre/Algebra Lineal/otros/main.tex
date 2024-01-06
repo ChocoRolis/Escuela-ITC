@@ -1,0 +1,57 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[spanish]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Evidencia no.1}
+\author{Rolando Rivas 594276}
+
+
+\begin{document}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{UdemLogo.png}
+\end{figure}
+
+\maketitle
+
+\begin{abstract}
+En esta actividad el alumno utilizará los conocimientos de los temas del parical 1 para aplicarlos en el análisis y solución de un problema aplicado a la ingeniería. Además, plasmará su interpretación y reflexión sobre el trabajo realizado.
+\end{abstract}
+
+\section{Introduction}
+
+Dado un caudal por donde pasa un fluido de radio constante $R$ el perfil de la velocidad del fluido a una distancia radial $r$ del centro y una constante $k$ esta dado por \[v(r) = k(R^2-r^2)\] 
+
+por lo tanto el caudal volumentrico $Q$ resultaria de calcular la integral definida de $v(R)$ en terminos de $r$: \\ \[ Q =\int_{a}^{b} k(R^2-r^2) \,dr \] \\
+
+A continuacion se muestra el programa en matlab hecho para hacer el calculo:
+
+\begin{verbatim}
+>> syms k R r
+>> f(r) = k*(R^2 - r^2)
+>> d(r) = int(f)
+ 
+d(r) =
+ 
+(k*r*(3*R^2 - r^2))/3
+\end{verbatim}
+
+La funcion resultante seria
+\\
+\[Q =\frac{kr(3R^2 - r^2)}{3}\]
+\\
+Puede notar que no 
+Doy mi palabra que he realizado esta actividad con integridad academica
+
+\end{document}
