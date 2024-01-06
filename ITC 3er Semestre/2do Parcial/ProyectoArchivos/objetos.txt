@@ -1,0 +1,5 @@
+frutas
+pelotas
+juguetes
+comida
+agua
