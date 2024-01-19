@@ -26,13 +26,13 @@ void list_add_value(Node **head, int value)
 		tmp = &((*tmp)->next);
 	}
 	*tmp = new_node;
-    (*tmp)->next = 0;
+    	(*tmp)->next = 0;
 }
 
 int main()
 {
     Node *linked_list;
-    //linked_list = 0;
+    linked_list = 0;
     list_add_value(&linked_list, NULL);
     list_add_value(&linked_list, NULL);
 
