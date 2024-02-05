@@ -53,38 +53,50 @@ int main()
 
 	for (int i=0; i<casos; i++)
 	{
-		char arg[12], arg2[3], arg3[1];
+		
 		int size_instrucciones;
 		scanf("%d", &size_instrucciones);
 		int instrucciones[size_instrucciones];
 			
-
+		char *arg = NULL;
+    		size_t len = 0;
+    		ssize_t leer;
+		
 		for (int j=0; j<size_instrucciones; j++)
 		{
-				scanf("%s %s %s", arg);
-				if (arg[1] == 'D')
-				{
-					resultados[i] += 1;
-					instrucciones[j] = 1;
-				}
-				else if (arg[1] == 'T')
-				{
-					resultados[i] += -1;
-					instrucciones[j] = -1;
-				}
-				else if (arg[1] == 'G')
-				{
-					int tmp = char_a_int(arg[10]);
-					printf("%s\n", arg);
-					resultados[i] += instrucciones[tmp-1];
-					instrucciones[j] = instrucciones[tmp-1];
-				}
+			leer = getline(&arg, &len, stdin);	
+				
+
+
+			if (arg[1] == 'D')
+			{
+				resultados[i] += 1;
+				instrucciones[j] = 1;
+			}
+			else if (arg[1] == 'T')
+			{
+				resultados[i] += -1;
+				instrucciones[j] = -1;
+			}
+			else if (arg[1] == 'G')
+			{
+				int tmp = char_a_int(arg[10]);
+				printf("%s\n", arg);
+				resultados[i] += instrucciones[tmp-1];
+				instrucciones[j] = instrucciones[tmp-1];
+			}
+			
+		
+     	  		arg = NULL;
+        		
 		}
+		free(arg);
 	}
 	
 	for (int i=0; i<casos; i++)
 	{
 		printf("%d\n", resultados[i]);
-	}
+}
+	
 	return 0;
 }
