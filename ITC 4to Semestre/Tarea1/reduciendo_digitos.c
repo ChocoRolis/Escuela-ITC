@@ -62,7 +62,7 @@ void list_add_value(Node **head, int value)
 
 int main()
 {
-    Node *linked_list;
+	Node *linked_list;
     linked_list = 0;
     list_add_value(&linked_list, NULL);
     list_add_value(&linked_list, NULL);
@@ -73,8 +73,8 @@ int main()
     free(linked_list->next);
     free(linked_list);
 
-
+	    
+    	
 	
-
-    return 0;
+	return 0;
 }

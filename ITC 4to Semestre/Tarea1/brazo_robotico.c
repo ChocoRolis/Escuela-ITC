@@ -42,6 +42,8 @@ int char_a_int(char num)
     return ValorInt;
 }
 
+/* ESTE PROGRAMA ACTUALMENTE ES IMCOMPLETO, VEASE LA IMPLEMENTACION DEL getline() */
+
 int main()
 {
 	int casos;
@@ -53,20 +55,17 @@ int main()
 
 	for (int i=0; i<casos; i++)
 	{
-		
 		int size_instrucciones;
 		scanf("%d", &size_instrucciones);
 		int instrucciones[size_instrucciones];
 			
-		char *arg = NULL;
+		char *arg;
     		size_t len = 0;
     		ssize_t leer;
-		
-		for (int j=0; j<size_instrucciones; j++)
-		{
-			leer = getline(&arg, &len, stdin);	
-				
 
+		for (int j = 0; j<size_instrucciones; j++)
+		{
+			leer = getline(&arg, &len, stdin);	// Error, durante la primera iteracion getline() no lee la entrada	
 
 			if (arg[1] == 'D')
 			{
@@ -85,18 +84,18 @@ int main()
 				resultados[i] += instrucciones[tmp-1];
 				instrucciones[j] = instrucciones[tmp-1];
 			}
-			
-		
+
      	  		arg = NULL;
         		
 		}
+
 		free(arg);
 	}
 	
 	for (int i=0; i<casos; i++)
 	{
 		printf("%d\n", resultados[i]);
-}
+	}
 	
 	return 0;
 }
