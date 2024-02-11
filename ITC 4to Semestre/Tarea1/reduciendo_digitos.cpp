@@ -11,9 +11,9 @@ int char_a_int(char num)
 
 string sumas(string num)
 {
-	long long int suma = 0;
+	unsigned long long int suma = 0;
 	
-	for (long int i = 0; i < num.size(); i++)
+	for (unsigned long long int i = 0; i < num.size(); i++)
 		
 	{
 		suma += char_a_int( num[i] );
@@ -51,3 +51,4 @@ int main()
 	
 	return 0;	
 }
+// Damos nuestra palabra que hemos hecho esta actividad con integridad acadmica.
