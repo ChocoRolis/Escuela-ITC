@@ -63,6 +63,8 @@ int main()
     		size_t len = 0;
     		ssize_t leer;
 
+		leer = getline(&arg, &len, stdin);
+
 		for (int j = 0; j<size_instrucciones; j++)
 		{
 			leer = getline(&arg, &len, stdin);	// Error, durante la primera iteracion getline() no lee la entrada	
