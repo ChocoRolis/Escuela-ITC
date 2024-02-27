@@ -19,3 +19,6 @@
 
 7: 7_10001st_prime.c
 	gcc -Wall 7_10001st_prime.c -o 7 -O2
+
+10: 10_summation_of_primes.c
+	gcc -Wall 10_summation_of_primes.c -o 10 -lm -O2
