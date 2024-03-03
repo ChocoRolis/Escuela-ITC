@@ -20,5 +20,11 @@
 7: 7_10001st_prime.c
 	gcc -Wall 7_10001st_prime.c -o 7 -O2
 
+8: 8_largest_product_series.c
+	gcc -Wall 8_largest_product_series.c -o 8 -O2
+
+9: 9_special_pytha_triple.c
+	gcc -Wall 9_special_pytha_triple.c -o 9 -lm -O2
+
 10: 10_summation_of_primes.c
 	gcc -Wall 10_summation_of_primes.c -o 10 -lm -O2
