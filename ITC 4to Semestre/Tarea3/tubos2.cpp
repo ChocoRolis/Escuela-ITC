@@ -1,9 +1,24 @@
 #include <iostream>
+#include <algorithm>
+#include <vector>
 using namespace std;
 
-void tubos(int &n1, int &n2)
+void tubos(int &n1, int &n2, vector<int> &arr[], int size, int obj)
 {
-
+	for (int i = 0; i < size - 1; ++i)
+	{
+		for (int j = i+1; j < size; ++j)
+		{
+			if (arr[i] + arr[j] == obj)
+			{
+				if (arr[j] - arr[i] < n1 - n2)
+				{
+					n1 = arr[j];
+					n2 = arr[i];
+				}
+			}
+		}
+	}
 }
 
 int main()
@@ -12,17 +27,18 @@ int main()
 	cin >> casos;
 	for (int i = 0; i < casos; ++i)
 	{
-		int cant_nums, objetivo, num1, num2;
-		cin >> cant_nums;
-		int nums[cant_nums];
+		int size, objetivo, num1 = 10000000, num2 = 0;
+		cin >> size;
+		vector<int> nums[size];
 
-		for (int j = 0; j < cant_nums; ++j)
+		for (int j = 0; j < size; ++j)
 		{
 			cin >> nums[j];
 		}
 		
 		cin >> objetivo;
-		tubos(num1, num2);
+		sort(nums.begin(), nums.end());
+		tubos(num1, num2, nums, size, objetivo);
 		
 		cout << num1 << " " << num2 << "\n";
 	}
