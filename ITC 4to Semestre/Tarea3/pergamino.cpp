@@ -3,10 +3,10 @@
 
 using namespace std;
 
-char pergamino(int indice, int ite)
+char pergamino(unsigned long int indice, unsigned long int ite)
 {
 	string cadena = "";
-	for (int i = 1; i <= ite; ++i)
+	for (unsigned long int i = 1; i <= ite; ++i)
 	{
 		cadena += to_string(i);
 	}

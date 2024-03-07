@@ -28,3 +28,9 @@
 
 10: 10_summation_of_primes.c
 	gcc -Wall 10_summation_of_primes.c -o 10 -lm -O2
+
+11: 11_largest_product_grid.c
+	gcc -Wall 11_largest_product_grid.c -o 11 -O2
+
+12: 12_divisible_triangular_number.c
+	gcc -Wall 12 12_divisible_triangular_number.c -o 12 -O2
