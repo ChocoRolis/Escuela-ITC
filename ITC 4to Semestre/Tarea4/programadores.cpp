@@ -1,5 +1,5 @@
 #include <iostream>
-#include <array>
+
 using namespace std;
 
 void swap(int *xp, int *yp)
@@ -49,7 +49,6 @@ int tiempo_tareas(int informa[], int chamba[], int size)
 int main()
 {
 	int tareas;
-
 	while (true)
 	{
 		cin >> tareas;
