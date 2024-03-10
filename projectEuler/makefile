@@ -33,4 +33,4 @@
 	gcc -Wall 11_largest_product_grid.c -o 11 -O2
 
 12: 12_divisible_triangular_number.c
-	gcc -Wall 12 12_divisible_triangular_number.c -o 12 -O2
+	gcc -Wall 12_divisible_triangular_number.c -o 12 -lm -O2
