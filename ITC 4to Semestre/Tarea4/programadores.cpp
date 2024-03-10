@@ -33,7 +33,7 @@ int tiempo_tareas(int informa[], int chamba[], int size)
 {
 	int max = 0, temp = 0;
 
-	for (int i = size; size >= 0; --i)
+	for (int i = size; i >= 0; --i)
 	{
 		temp += informa[i] + chamba[i];
 		for (int j = i+1; j <= size; ++j)

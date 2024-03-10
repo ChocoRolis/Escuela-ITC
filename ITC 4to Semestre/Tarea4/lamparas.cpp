@@ -2,6 +2,10 @@
 #include <string>
 using namespace std;
 
+//Rolando Rivas #594276
+//Angel Muñoz #604386
+//Tarea 4
+
 int lamparas(string &calle, int size)
 {
 	int cont = 0;
