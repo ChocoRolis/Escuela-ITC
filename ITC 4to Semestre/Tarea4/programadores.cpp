@@ -22,18 +22,18 @@ void bubbleSort(int arr1[], int arr2[], int n)
                 		swap(&arr1[j], &arr1[j+1]);
 				swap(&arr2[j], &arr2[j+1]);
             		}
-            	else 
-	    	{
-		    	cont++;
-	    	}
-        }
+            		else 
+	    		{
+		    		cont++;
+	    		}
+        	}
 
-        if (cont == n-1)
-       	{
-		return;
-	}
+        	if (cont == n-1)
+       		{
+			return;
+		}
 
-        cont = 0;
+       	 	cont = 0;
     	}
     	return;
 }
