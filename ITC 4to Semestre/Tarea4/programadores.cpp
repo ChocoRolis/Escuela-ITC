@@ -65,8 +65,7 @@ int main()
 {
 	int tareas;
 
-	while (true)
-	{
+	do {
 		cin >> tareas;
 
 		if (tareas == 0) break;
@@ -81,6 +80,6 @@ int main()
 		bubbleSort(chamba, informa, tareas);
 
 		cout << tiempo_tareas(informa, chamba, tareas-1) << "\n";
-	}
+	} while (tareas != 0);
 	return 0;
 }
