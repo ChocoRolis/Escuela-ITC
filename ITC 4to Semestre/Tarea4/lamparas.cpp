@@ -9,6 +9,7 @@ using namespace std;
 int lamparas(string &calle, int size)
 {
 	int cont = 0;
+
 	for (int i = 0; i < size; ++i)
 	{
 		if (calle[i] == '+')
@@ -30,9 +31,9 @@ int main()
 	while (casos--)
 	{
 		cin >> metros;
-		cin >> calzada;
-		
+		cin >> calzada;	
 		cout << lamparas(calzada, metros) << "\n";
 	}
+
 	return 0;
 }
