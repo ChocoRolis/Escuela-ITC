@@ -4,28 +4,28 @@ using namespace std;
 
 void swap(int *xp, int *yp)
 {
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
+	int temp = *xp;
+    	*xp = *yp;
+    	*yp = temp;
 }
 
 void bubbleSort(int arr1[], int arr2[], int n)
 {
-    int cont = 0;
+    	int cont = 0;
 
-    for (int i = 0; i < n-1; i++)
-    {
-        for (int j = 0; j < n-1; j++)
-        {
-            if (arr1[j] > arr1[j+1])
-            {
-                swap(&arr1[j], &arr1[j+1]);
-		swap(&arr2[j], &arr2[j+1]);
-            }
-            else 
-	    {
-		    cont++;
-	    }
+    	for (int i = 0; i < n-1; i++)
+    	{
+        	for (int j = 0; j < n-1; j++)
+        	{
+            		if (arr1[j] > arr1[j+1])
+            		{
+                		swap(&arr1[j], &arr1[j+1]);
+				swap(&arr2[j], &arr2[j+1]);
+            		}
+            	else 
+	    	{
+		    	cont++;
+	    	}
         }
 
         if (cont == n-1)
@@ -34,8 +34,8 @@ void bubbleSort(int arr1[], int arr2[], int n)
 	}
 
         cont = 0;
-    }
-    return;
+    	}
+    	return;
 }
 
 int tiempo_tareas(int informa[], int chamba[], int size)
