@@ -54,3 +54,52 @@ int main()
 }
 */
 
+
+/* OTRA SOLUCION (de carlos)
+#include <stdio.h>
+#include <math.h>
+
+int is_prime(long int num, unsigned int arr[500], int limite)
+{
+    unsigned int i;
+
+	for (i = 0; i <= limite; i++)	
+	{
+		if (num % arr[i] == 0)
+		{
+			return 0;
+		}
+	}
+	return num;
+}
+
+int main()
+{
+    
+    unsigned long numerote = 600851475143;
+	unsigned int arr[90000], i;
+	unsigned int sqrtnumerote;
+	int mayor;
+	unsigned int factor;
+	arr[0] = 2;
+	arr[1] = 3;
+	mayor = 1;
+	factor = 3;
+	sqrtnumerote = sqrt(numerote);
+	printf("sqrt=%u\n",sqrtnumerote);
+	
+	for (i = 4; i < sqrtnumerote; i++)
+	{
+		if ( is_prime(i, arr, mayor) )
+		{
+		    arr[++mayor] = i;
+			if( numerote % i == 0 )
+			{
+			    factor = arr[mayor];
+			}
+		}
+	}
+	printf("mayor_factor=%u\n",factor);
+	return 0;	
+}
+*/
