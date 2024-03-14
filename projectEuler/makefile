@@ -34,3 +34,9 @@
 
 12: 12_divisible_triangular_number.c
 	gcc -Wall 12_divisible_triangular_number.c -o 12 -lm -O2
+
+13: 13_large_sum.cpp
+	g++ -Wall 13_large_sum.cpp -o 13 -O2
+
+14: 14_longest_collatz_sequence.c
+	gcc -Wall 14_longest_collatz_sequence.c -o 14 -O2
