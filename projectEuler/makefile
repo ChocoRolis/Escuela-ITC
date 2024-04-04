@@ -40,3 +40,16 @@
 
 14: 14_longest_collatz_sequence.c
 	gcc -Wall 14_longest_collatz_sequence.c -o 14 -O2
+
+15: 15_lattice_paths.c
+	gcc -Wall 15_lattice_paths.c -o 15 -O2	
+
+16: 16_power_digit_sum.c
+	gcc -Wall 16_power_digit_sum.c -o 16 -O2
+	
+17: 17_number_letter_counts.c
+	gcc -Wall 17_number_letter_counts.c -o 17 -O2
+
+18: 18_maximum_path_sum.c
+	gcc -Wall 18_maximum_path_sum.c -o 18 -O2
+
