@@ -12,20 +12,20 @@ bool es_valido(string &cadena)
 	int cont = 0;
 	unordered_set<string> particiones;
 	
-	for (int i = 0; i < cadena.size(); ++i)
+	for (int i = 0; i <= cadena.size(); ++i)
 	{
-		if (cadena[i] != '|')
+		if (cadena[i] != '|' && i != cadena.size())
 		{
 			tmp += cadena[i];	
 		}
 		else
 		{
-			particiones.insert(tmp);
-			tmp.clear();
-		}
-		if (particiones.count(tmp) > 0) 
-		{
-			return false;
+			if (particiones.count(tmp) == 0) 
+			{
+				particiones.insert(tmp);
+				tmp.clear();
+			}
+			else { return false; }
 		}
 	}
 	return true;
@@ -61,28 +61,27 @@ void particionar(string	cadena, int i)
 			++i; 
 		}
 
-		print(cadena, i+1);
+		particionar(cadena, i+1);
 		
 		cadena.erase(cadena.begin() + i);
 
-		print(cadena, i);
+		particionar(cadena, i);
 	}
 }
 
 
-void solve()
+void solve(string &palabra)
 {
-	string palabra, palabra_dividida = "";
-	cin >> palabra;
+	string palabra_dividida = "";
 
-	for (int i = 0; i < word.size(); ++i)
+	for (int i = 0; i < palabra.size(); ++i)
 	{
-		palabra_dividida += word[ i ];
+		palabra_dividida += palabra[ i ];
 		palabra_dividida += "|";
 	}
 	palabra_dividida.pop_back();
 
-	numero_de_particiones(palabra_dividida, 0);
+	particionar(palabra_dividida, 0);
 
 	cout << MAX_PARTICIONES << endl; 
 	MAX_PARTICIONES = 0;
@@ -90,11 +89,9 @@ void solve()
 
 int main()
 {
-	int cases;
-	cin >> cases;
-
-	for (; cases > 0; --cases)
+	string palabras;
+	while (cin >> palabras)
 	{
-		solve();
+		solve(palabras);
 	}
 }
