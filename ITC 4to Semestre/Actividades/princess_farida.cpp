@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-// TIME LIMIT EXCEEDED
+
+/* PROBLEM: https://www.spoj.com/problems/FARIDA/ */
+
 typedef long long ll;
 
-unordered_map<int, int> resultados;
+unordered_map<int, ll> resultados;
 
 ll recorrido(int* monsters, int index, int size)
 {
