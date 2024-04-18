@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Rolando Rivas 594276
+// Angel Muñoz 604386
+
 void read_input( vector<vector<bool>> &ants, int height, int width )
 {
 	string line;
