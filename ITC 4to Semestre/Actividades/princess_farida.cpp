@@ -7,11 +7,6 @@ unordered_map<int, int> resultados;
 
 ll recorrido(int* monsters, int index, int size)
 {
-	if (index == size - 1)
-	{
-		resultados[ index ] = monsters[index];
-		return monsters[index]; 
-	}
 	if (index >= size)
 	{
 		return 0;
@@ -22,16 +17,12 @@ ll recorrido(int* monsters, int index, int size)
 	}
 	else 
 	{
-		ll suma = 0;
+		ll suma1 = monsters[index] + recorrido(monsters, index + 2, size);
+		ll suma2 = monsters[index] + recorrido(monsters, index + 3, size);
 
-		for (int i = index; i < size; ++i)
-		{
-			suma = max( suma, monsters[index] + recorrido(monsters, i + 2, size) );
-		}
+		resultados[ index ] = max( suma1, suma2 );
 
-		resultados[ index ] = suma;
-
-		return suma;
+		return resultados[ index ];
 	}
 }	
 
@@ -48,7 +39,7 @@ void solve()
 		cin >> monsters[ i ];
 	}
 	
-	int MAX = max( recorrido( monsters, 0, size), recorrido(monsters, 1, size) );
+	ll MAX = max( recorrido( monsters, 0, size), recorrido(monsters, 1, size) );
 
 	cout << "Case " << caso << ": " << MAX << "\n";
 	++caso;	
