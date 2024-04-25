@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-/*
+
 int camino_mas_corto(int **adyacencias, int nodoInicio, int nodoFinal)
 {
 	return **adyacencias;
 }
-*/
+
 const int a = 100000, b = 100000;
 
 void algo( int ptr[a][b] )
