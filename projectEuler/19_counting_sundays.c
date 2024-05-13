@@ -1,5 +1,5 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
+#include <stdbool.h>
 
 // A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
 
@@ -31,6 +31,5 @@ int main() {
 		++mes_actual;
         	es_bisiesto = false;
     	}
-
-	cout << cant << endl;
+	printf("%d\n", cant);
 }

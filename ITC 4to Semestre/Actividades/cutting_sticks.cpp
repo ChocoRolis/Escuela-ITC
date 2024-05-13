@@ -2,22 +2,20 @@
 using namespace std;
 
 int cuts[51] = {};
-map< pair<int,int>, int > memoria;
+int memo[1000][1000];
 
 int cutting_sticks( int ini, int fin )
 {
-	pair<int, int> trozo = {ini, fin};
-
 	if (ini == fin - 1)
 	{
 		return 0;
 	}
-	if (memoria.find( trozo ) != memoria.end())
+	if (memo[ ini ][ fin ] != 0)
 	{
-		return memoria[ trozo ];
+		return memo[ ini ][ fin ];
 	}
 
-	int min_costo = INT_MAX;
+	int min_costo = 9999999;
 	int costo;
 
 	for (int i = ini + 1; i < fin; ++i)
@@ -28,7 +26,7 @@ int cutting_sticks( int ini, int fin )
 		min_costo = min( min_costo, costo );
 	}
 
-	memoria[ trozo ] = min_costo;
+	memo[ ini ][ fin ] = min_costo;
 	return min_costo;
 }
 
@@ -48,5 +46,8 @@ int main()
 		cuts[ n_cuts + 1 ] = lenght;
 
 		cout << "The minimum cutting is " << cutting_sticks( 0, n_cuts + 1 ) << ".\n";
+
+		memset(cuts, 0, sizeof(cuts));
+		memset(memo, 0, sizeof(memo));
 	}
 }

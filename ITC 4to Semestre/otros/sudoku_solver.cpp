@@ -3,47 +3,57 @@
 #include <map>
 #include <algorithm>
 using namespace std;
+
 int S[9][9];
 
 bool sudoku_solver()
 {
-   //Buscar celda vacía
-   bool encontrado=false;
-   vector<bool> N(10,false);
-   int f,c;
-   for(f=0;f<9 && !encontrado;f++)
-      for(c=0;c<9 && !encontrado;c++)
-         if(S[f][c]==0)
-            encontrado=true;
-   if(!encontrado) //No hay celdas vacías
-      return true;
-   f--;c--;
-   //Buscar números que se pueden poner
-   for(int i=0;i<9;i++) //Buscar por fila
-      if(S[f][i]!=0)
-         N[S[f][i]]=true;
-   for(int i=0;i<9;i++) //Buscar por fila
-      if(S[i][c]!=0)
-         N[S[i][c]]=true;
-   int fcuad=int(f/3)*3;
-   int ccuad=int(c/3)*3;
-   for(int ff=fcuad;ff<fcuad+3;ff++)
-      for(int cc=ccuad;cc<ccuad+3;cc++)
-         if(S[ff][cc]!=0)
-            N[S[ff][cc]]=true;
+	//Buscar celda vacía
+	bool encontrado = false;
+	vector<bool> N(10, false);
+	int f, c;
+
+	for(f=0; f<9 && !encontrado;f++)
+		for(c=0; c<9 && !encontrado;c++)
+			if(S[f][c] == 0)
+				encontrado=true;
+
+	if(!encontrado) //No hay celdas vacías
+		return true;
+	
+	f--;c--;
+	
+	//Buscar números que se pueden poner
+
+	for(int i=0;i<9;i++) //Buscar por fila
+		if(S[f][i]!=0)
+			N[S[f][i]]=true;
+
+	for(int i=0;i<9;i++) //Buscar por fila
+		if(S[i][c]!=0)
+			N[S[i][c]]=true;
+
+	int fcuad = int(f/3)*3;
+	int ccuad=int(c/3)*3;
+
+	for(int ff=fcuad;ff<fcuad+3;ff++)
+		for(int cc=ccuad;cc<ccuad+3;cc++)
+			if(S[ff][cc]!=0)
+				N[S[ff][cc]]=true;
    
    //Probar uno por uno los números que se pueden poner
-   for(int i=1;i<10;i++)
-   {
-      if(N[i]==false) //Es un número válido
-      {
-         S[f][c]=i; //Poner número
-         if(sudoku_solver())
-            return true;
-         S[f][c]=0; //Quitar número
-      }
-   }
-   return false;
+	for(int i=1;i<10;i++)
+	{
+		if(N[i]==false) //Es un número válido
+		{
+			S[f][c]=i; //Poner número
+			if(sudoku_solver())
+				return true;
+
+			S[f][c]=0; //Quitar número
+		}
+	}
+	return false;
 }
 
 int main() {
