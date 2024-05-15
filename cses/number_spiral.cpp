@@ -3,14 +3,9 @@ using namespace std;
 
 typedef long long ll;
 
-ll num_diagonal(int num)
+inline ll num_diagonal(int num)
 {
-	ll cont = 1;
-	for (int i = 1; i < num; ++i)
-	{
-		cont += 2 * i;
-	}
-	return cont;
+	return (long long) num * num - (num - 1);
 }
 
 void solve()
@@ -22,8 +17,24 @@ void solve()
 	{
 		cout << num_diagonal(rows) << endl;
 	}
+	else if (rows > columns)
+	{
+		ll diagonal = num_diagonal(rows);
+		int negativo = -1;
+		
+		if (rows % 2 == 0) { negativo = 1; }
 
+		cout << diagonal + negativo * (rows - columns) << endl;
+	}
+	else
+	{
+		ll diagonal = num_diagonal(columns);
+		int negativo = 1;
+		
+		if (columns % 2 == 0) { negativo = -1; }
 
+		cout << diagonal + negativo * (columns - rows) << endl;
+	}
 }
 
 int main()
