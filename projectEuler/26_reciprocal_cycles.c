@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-int max(int a, int b)
-{
-	return (a > b) ? a : b;
-}
-
 int residue_exists( int *arr, int size, int num )
 {
 	int i = size - 1;
