@@ -8,7 +8,7 @@ int sieve(int size)
     int root = sqrt(size);
     int cont = 0;
 
-    memset(nums, 1, sizeof nums);
+    memset(nums, 1, sizeof(bool) * size );
 
     for (int i = 2; i <= root; ++i)
     {
@@ -31,6 +31,6 @@ int sieve(int size)
 
 int main()
 {
-    int primes = sieve(1000000);
-    printf("%d\n", primes);
+    int primes = sieve(1000000); // Counts primes below 1000000
+    printf("%d\n", primes); 	// Tested on leetcode
 }
