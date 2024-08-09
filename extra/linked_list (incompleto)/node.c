@@ -1,30 +1,41 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "node.h"
 
-void ListAgregarNodo(Nodo* inicio, int Info){
-    Nodo *nuevo, *temp = inicio;
-    nuevo = crearNodo(Info);
-    if (inicio == NULL){
-        inicio = nuevo;
-    }
-    else {
-        while (temp != NULL){
-          temp = temp->next;
-        }
-    }
-    temp = nuevo;
+Node* create_Node(int info)
+{
+	Node* new_node = (Node*) malloc(sizeof(Node));
+
+	new_node->next = NULL;
+	new_node->info = info;
+
+	return new_node;
 }
 
-int main(){
-    puts("Code works");
-    Nodo* nodito = crearNodo(3), *otroNodo = crearNodo(88);
+void delete_Node(Node* node)
+{
+	free(node);
+}
 
-    printf("la info del nodo es: %d\n", nodito->info);
-    borrarNodo(nodito);
+void list_add_value(Node **head, int value)
+{
+        Node **tmp, *new_node;
+        new_node = create_Node(value);
+        tmp = head;
+        while ( (*tmp) )
+        {
+                tmp = &((*tmp)->next);
+        }
+        *tmp = new_node;
+        (*tmp)->next = 0;
+}
 
-    printf("la info del otro nodo es: %d\n", otroNodo->info);
-    ListAgregarNodo(otroNodo, 89);
-    printf("la info del segundo otro nodo es: %d", (otroNodo->next)->info);
-    borrarNodo(otroNodo->next); borrarNodo(otroNodo);
+void delete_list(Node **head)
+{
+	Node **tmp;
+	while ( (*head) )
+	{
+		tmp = head;
+		head = &((*head)->next);
+		deleteNode(*tmp);
+	}
 }

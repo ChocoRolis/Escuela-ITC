@@ -1,19 +1,14 @@
+#ifndef NODE_H
+#define NODE_H
 
-struct node {
+typedef struct node {
     int info;
     struct node *next;
-};
+} Node ;
 
-typedef struct node Nodo;
+Node* createNode(int info);
+void deleteNode(Node* node);
+void list_add_value(Node **head, int value);
+void delete_list(Node **head);
 
-Nodo* crearNodo(int Info){
-    Nodo* nuevo;
-    nuevo = (Nodo*) malloc(sizeof(Nodo));
-    nuevo->next = 0;
-    nuevo->info = Info;
-    return nuevo;
-}
-
-void borrarNodo(Nodo* nodo){
-    free(nodo);
-}
+#endif

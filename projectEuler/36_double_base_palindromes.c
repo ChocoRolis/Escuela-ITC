@@ -35,10 +35,7 @@ bool binary_is_palindrome( int num )
 	int i = 31;
 	int size_binary;
 
-	while ((num & (1 << i)) == 0)
-	{
-		--i;
-	}
+	while ((num & (1 << i)) == 0) { --i; }
 
 	size_binary = i;
 
@@ -52,6 +49,19 @@ bool binary_is_palindrome( int num )
 
 	return true;
 }
+
+
+void algo(int num)
+{
+	if (num & 1)
+	{
+		//es impar
+	}
+	else
+	{
+		// es par
+	}
+
 
 
 int main()

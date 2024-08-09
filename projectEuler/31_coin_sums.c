@@ -1,29 +1,36 @@
 #include <stdio.h>
-
-int coin_types[] = {1, 2, 5, 10, 20, 50, 100, 200};
-const int size = 8;
-
-int coins(int sum)
-{
-	if (sum == 10)
-	{
-		return 1;
-	}
-	if (sum > 10)
-	{
-		return 0;
-	}
-
-	int tmp = 0;
-	for (int i = 0; i < size; ++i)
-	{
-		tmp += coins(sum + coin_types[i]);
-	}
-
-	return sum + tmp;
-}
+#define f(i,a,b) for(int i = (a); i <= (b); ++i)
+#define ll long long 
 
 int main()
 {
-	printf("%d\n", coins(0));
+	ll sum = 1;
+
+	f(b,0,2)
+	{
+		f(c,0,4)
+		{
+			f(d,0,10)
+			{
+				f(e,0,20)
+				{
+					f(f,0,40)
+					{
+						f(g,0,100)
+						{
+							f(h,0,200)
+							{
+								if (b*100 + c*50 + d*20 + e*10 + f*5 + g*2 + h*1 == 200)
+								{
+									++sum;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	printf("%lld\n", sum);
 }

@@ -24,6 +24,7 @@ void sieve(bool *nums, int size)
 	}
 }
 
+/* Ejemplo de uso
 int main()
 {
 	bool primes[EJEMPLO];
@@ -37,3 +38,4 @@ int main()
 		}
 	}
 }
+*/
