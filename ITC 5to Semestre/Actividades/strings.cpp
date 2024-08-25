@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// INCOMPLETO
+
 int says_icpc = 0;
 int cant_nums = 0;
 int cant_vocs = 0;
@@ -76,10 +78,8 @@ void words_to_lower( string line )
 	phrase += line;
 }
 
-int main()
+void read_line(string line)
 {
-	string line;
-
 	while ( getline(cin, line)  &&  line != "......." )
 	{
 		if (line.back() == '-') { line.pop_back(); }
@@ -89,8 +89,20 @@ int main()
 		words_to_lower( line );
 	}
 
+	getline(cin, line);
+
+}
+
+int main()
+{
+	string line;
+
+	read_line(line);
+
 	cout << phrase << endl;
 	cout << cant_nums << " " << cant_vocs << " " << cant_cons << endl;
 	cout << min_word << " " << max_word << endl;
 	cout << says_icpc << endl;
+
+	last_line();
 }

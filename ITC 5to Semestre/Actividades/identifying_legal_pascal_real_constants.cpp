@@ -11,21 +11,20 @@
 
 using namespace std;
 
-void solve()
+void solve(string line)
 {
 
-}
 
 int main()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 
-	int T;
-	cin >> T;
+	string line;
 	
-	while (T--)
+	while (getline(cin, line))
 	{
-		solve();
+		solve( line );
 	}
 }
+
