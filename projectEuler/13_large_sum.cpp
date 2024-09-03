@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-int char_a_int(char num)
+inline int char_a_int(char num)
 {
 	return (int) num - '0';
 }
