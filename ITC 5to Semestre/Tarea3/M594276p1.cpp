@@ -1,3 +1,7 @@
+// Rolando Rivas Davalos 594276
+//
+// auxilio
+
 #include <bits/stdc++.h>
 #define f(i,a,b) for(int i = (a); i < (b); ++i)
 #define rf(i,a,b) for(int i = (a); i >= (b); --i)
@@ -145,3 +149,4 @@ int main()
 	}
 }
 
+// Doy mi palabra que he realizado esta actividad con integridad academica.

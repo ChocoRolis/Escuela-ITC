@@ -1,21 +1,26 @@
 #include <bits/stdc++.h>
-#define EJEMPLO 32
-#define ll long long
+#define EJEMPLO 294967296
+#define ll unsigned long long
 
 using namespace std;
 
-void sieve(bool *nums, int size)
+bool primes[ EJEMPLO ];
+
+void sieve(bool *nums, ll size)
 {
 	int root = sqrt(size);
 	int cont = 0;
 
 	memset(nums, true, sizeof(bool) * size);
 
-	for (int i = 2; i <= root; ++i)
+	nums[ 0 ] = false;
+	nums[ 1 ] = false;
+
+	for (ll i = 2; i <= root; ++i)
 	{
 		if (nums[i]) 
 		{ 
-			for (int j = 0; (i*i + i*j) < size; ++j)
+			for (ll j = 0; (i*i + i*j) < size; ++j)
 			{
 				nums[i*i + i*j] = false;
 			} 
@@ -25,21 +30,23 @@ void sieve(bool *nums, int size)
 
 int main()
 {
-	unordered_set<ll> superpowers = {1};
-	bool primes[ EJEMPLO ];
+	set<ll> superpowers = { 1 };
 
 	sieve( primes, EJEMPLO );
-
-
-	for (ll i = 2; i < EJEMPLO - 30; ++i)
+	
+	for (ll i = 2; i < EJEMPLO; ++i)
 	{
-		if (!primes[i]) { continue; }
+		//if (!primes[i]) { continue; }
 
-		for (int j = 1; j <= 32; ++j)
+		for (int j = 2; j <= 32; ++j)
 		{
 			if (primes[j]) { continue; }
 
-			superpowers.insert( pow(i, j) );
+			if ((ll) pow(i,j) > 0)
+			{
+				superpowers.insert( pow(i, j) );
+			}
+			else { break; }
 		}
 	}
 
@@ -47,4 +54,8 @@ int main()
 	{
 		cout << a << endl;
 	}
+
 }
+
+// 9219364293862491136
+// 18445618199572250625

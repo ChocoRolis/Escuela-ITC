@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 
-#define MAX 10000000
+#define MAX 1000000
 
 bool primes[ MAX ];
 
@@ -13,6 +13,9 @@ void sieve(bool *nums, int size)
 	int cont = 0;
 
 	memset(nums, true, sizeof(bool) * size);
+
+	nums[ 0 ] = false;
+	nums[ 1 ] = false;
 
 	for (int i = 2; i <= root; ++i)
 	{
@@ -48,21 +51,27 @@ bool right_trunc(int num, int digits)
 int main()
 {
 	int cont = 0;
-	int digi_cont = 90;
+	int digi_cont = 90, digits = 2;
 
 	sieve( primes, MAX );
 
-	for (int i = 11; i < MAX; i += 2)
+
+	for (int i = 10; i < MAX; ++i)
 	{
 		if (digi_cont == 0)
 		{
-			digi_cont = i*10 - i;
+			digi_cont = i*10 - i - 1;
+			++digits;
+		}
+		else
+		{
+			--digi_cont;
+		}
 
-		if (!left_trunc( i ))  { continue; }
-		if (!right_trunc( i )) { continue; }
+		if (!left_trunc( i )) { continue; }
+		if (!right_trunc( i, digits )) { continue; }
 
 		cont += i;
 	}
-
 	printf("%d\n", cont);
 }

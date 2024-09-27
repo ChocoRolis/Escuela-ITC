@@ -12,6 +12,9 @@ void sieve(bool *nums, int size)
 
 	memset(nums, true, sizeof(bool) * size);
 
+	nums[ 0 ] = false;
+        nums[ 1 ] = false;
+
 	for (int i = 2; i <= root; ++i)
 	{
 		if (nums[i]) 
