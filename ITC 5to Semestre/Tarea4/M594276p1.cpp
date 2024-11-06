@@ -1,3 +1,6 @@
+// Rolando Rivas 594276
+// 26/09/24
+
 #include <bits/stdc++.h>
 #define f(i,a,b) for(int i = (a); i < (b); ++i)
 #define rf(i,a,b) for(int i = (a); i >= (b); --i)
@@ -18,7 +21,7 @@ void solve(int uniques, int repeated)
 	bool time[ MAX ] = { 0 };
 	bool overlaps = false;
 	int arrive_min, depart_min;
-	int interval, interval_cont;
+	int interval;
 	
 	while (uniques--)
 	{
@@ -47,7 +50,10 @@ void solve(int uniques, int repeated)
 			f(i, arrive_min, depart_min) 
 			{ 
 				if (i >= MAX) { break; } 
-				if (time[i]) { overlaps = true; } 
+				if (time[i]) 
+				{ 
+					overlaps = true; 
+				}
 
 				time[ i ] = true; 
 			}
@@ -57,34 +63,7 @@ void solve(int uniques, int repeated)
 		}
 	}
 
-	////////// ELIGE EL MEJOR IF-ELSE DE COUTS /////////
-	
 	cout << ((overlaps) ? "SOLAPAMIENTO\n" : "OK\n");
-
-	////////////////////////////////////////////////////
-	/*
-	if (overlaps)	{ cout << "SOLAPAMIENTO\n"; 	}
-	else 		{ cout << "OK\n"; 		}
-
-	////////////////////////////////////////////////////
-
-	if (overlaps)
-	{
-		cout << "SOLAPAMIENTO\n";
-	}
-	else
-	{
-		cout << "OK\n";
-	}
-
-	////////////////////////////////////////////////////
-	
-	if (overlaps)
-		cout << "SOLAPAMIENTO\n";
-	else
-		cout << "OK\n";
-	*/
-	////////////////////////////////////////////////////
 }
 
 int main()
