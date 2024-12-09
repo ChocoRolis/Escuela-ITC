@@ -1,16 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #ifndef NODE_H
 #define NODE_H
 
 typedef struct node {
-    int info;
-    struct node *next;
-    struct node *prev;
-} Node ;
+    int val;
+    struct node* next;
+    struct node* prev;
+} Node;
 
-Node* createNode(int info);
-void deleteNode(Node* node);
-void list_add_value(Node **head, int value);
-void delete_list(Node **head);
+Node* create_node(int val);
+
+void delete_node(Node** node, int pos);
+
+void push_back(Node** head, int val);
+
+void clear(Node** head);
+
+void insert_node(Node** head, int val, int pos);
+
+int at(Node** head, int pos);
+
+int size(Node** head);
+
+Node* end(Node** head);
 
 #endif
-
