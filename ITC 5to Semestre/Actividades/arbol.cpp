@@ -1,5 +1,3 @@
-#include <iostream>
-#include <cmath>
 #include <algorithm>
 #include <map>
 #include <sstream>
@@ -67,7 +65,7 @@ void postorden(map<int,int>& ABB, int pos)
 	cout<<ABB[pos]<<" ";
 }
 
-void eliminar(map<int,int>& ABB, int pos)
+void eliminar(map<int,int>& ABB, int pos) // INCOMPLETO
 {
 	if (!existe(ABB, pos*2 + 1)  &&  !existe(ABB, pos*2 + 2))
 	{
@@ -76,8 +74,7 @@ void eliminar(map<int,int>& ABB, int pos)
 	}
 
 	if (existe(ABB, pos*2 + 1))
-	{
-		
+}
 
 
 int main()
