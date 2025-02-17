@@ -1,12 +1,12 @@
 #!/bin/bash
 
 trapper() {
-	echo " nO"
+	echo " senial recibida!"
 }
 
 trap trapper SIGTERM SIGSTOP SIGCHLD
 
-echo "Intenta detenerme :) (pid: $$)"
+echo "Esperando seniales... :) (pid: $$)"
 
 while true; do
 	sleep 2

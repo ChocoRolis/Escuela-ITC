@@ -1,14 +1,14 @@
-# Ejercicio02: Captura de SIGTERM, SIGSTOP y SIGCHLD
+# Ejercicio02: Captura de SIGTERM, SIGSTOP y SIGCHLD (Corregido)
 
 ## Descripción del ejercicio
 
-Crea un script que manejará las señales SIGTERM, SIGSTOP, y SIGCHLD para mostrar un mensaje de salida antes de detectar la señal en el proceso.
+Crea un script que manejará las señales `SIGTERM`, `SIGSTOP` y `SIGCHLD` para mostrar un mensaje de salida antes de detectar la señal en el proceso.
 
 ## Solución implementada
 
-El script utiliza el comando `trap` para capturar las señales `SIGTERM`, `SIGSTOP` y `SIGCHLD`. Cuando se recibe cualquiera de estas señales, se ejecuta la función `trapper()`, que imprime el mensaje "nO". El script continúa ejecutándose en un bucle infinito, durmiendo durante 2 segundos en cada iteración. El script imprime su PID al inicio para facilitar el envío de señales.
+El script utiliza el comando `trap` para capturar las señales `SIGTERM` y `SIGCHLD`. Cuando se recibe cualquiera de estas señales, se ejecuta la función `trapper()`, que imprime el mensaje " senial recibida!". El script continúa ejecutándose en un bucle infinito, durmiendo durante 2 segundos en cada iteración. El script imprime su PID al inicio para facilitar el envío de señales.
 
-**Nota importante:** La señal `SIGSTOP` no puede ser capturada por un script de Bash. Por lo tanto, el mensaje "nO" no se mostrará cuando se intente detener el script con `SIGSTOP`. La señal `SIGCHLD` se genera cuando un proceso hijo termina o se detiene. En este script, no se crean procesos hijos, por lo que esta señal no se generará a menos que el script sea modificado para crear procesos hijos.
+**Nota importante:** La señal `SIGSTOP` no puede ser capturada por un script de Bash. Por lo tanto, el mensaje " senial recibida!" no se mostrará cuando se intente detener el script con `SIGSTOP`. La señal `SIGCHLD` se genera cuando un proceso hijo termina o se detiene. En este script, no se crean procesos hijos, por lo que esta señal no se generará a menos que el script sea modificado para crear procesos hijos.
 
 ## Ejemplo de ejecución
 
@@ -21,7 +21,7 @@ El script utiliza el comando `trap` para capturar las señales `SIGTERM`, `SIGST
     El script mostrará un mensaje similar a:
 
     ```
-    Intenta detenerme :) (pid: 12345)
+    Esperando seniales... :) (pid: 12345)
     ```
 
 2.  **Enviar la señal SIGTERM (en otra terminal):**
@@ -33,7 +33,7 @@ El script utiliza el comando `trap` para capturar las señales `SIGTERM`, `SIGST
     El script mostrará:
 
     ```
-    nO
+     senial recibida!
     ```
 
 3.  **Intentar detener con SIGSTOP (en otra terminal):**
@@ -42,7 +42,7 @@ El script utiliza el comando `trap` para capturar las señales `SIGTERM`, `SIGST
     kill -STOP 12345
     ```
 
-    El script se detendrá inmediatamente, pero no mostrará "nO" porque `SIGSTOP` no se puede capturar.
+    El script se detendrá inmediatamente, pero no mostrará " senial recibida!" porque `SIGSTOP` no se puede capturar.
 
 4.  **Continuar la ejecución después de SIGSTOP (en otra terminal):**
 
@@ -58,7 +58,7 @@ El script utiliza el comando `trap` para capturar las señales `SIGTERM`, `SIGST
     kill -CHLD 12345
     ```
 
-    En este script específico, no se generará el mensaje "nO" porque no hay procesos hijos involucrados.
+    En este script específico, no se generará el mensaje " senial recibida!" porque no hay procesos hijos involucrados.
 
 6. **Terminar el proceso con SIGTERM**
 
