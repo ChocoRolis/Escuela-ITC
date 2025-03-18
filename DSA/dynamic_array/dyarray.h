@@ -1,7 +1,7 @@
 #ifndef DYARRAY_H
 #define DYARRAY_H
 
-#include <stddef.h> // For size_t
+#include <stddef.h> 
 
 typedef struct {
     int *data;

@@ -11,7 +11,6 @@ int main()
 	int a;
 	cin >> a;
 	cout << countPrimes(a) << endl;
-	int
 }
 
 int countPrimes(int n) 
@@ -45,4 +44,3 @@ bool is_prime(int num, vector<int> &Primes)
         Primes.push_back(num);
         return true;
 }
-

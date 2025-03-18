@@ -80,7 +80,7 @@ void insert_node(Node** head, int val, int pos)
 	Node* new_node = create_node(val);
 	Node* tmp = *head;
 
-	if (pos == 0)
+	if ( pos == 0 )
 	{
 		new_node->next = *head;
 		*head = new_node;
