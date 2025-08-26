@@ -14,19 +14,21 @@ void print_files(const char* dirname)
 
 	while (file)
 	{
-		if (strcmp(file->d_name, ".") && strcmp(file->d_name, ".."))
+		if (!strcmp(file->d_name, ".") && !strcmp(file->d_name, ".."))
 		{
-			printf("%s/%s\n", dirname, file->d_name);
+			continue;
+		}
 
-			if (file->d_type == DT_DIR)
-			{
-				char path[128] = { 0 };
-				strcat(path, dirname);
-				strcat(path, "/");
-				strcat(path, file->d_name);
+		printf("%s/%s\n", dirname, file->d_name);
 
-				print_files(path);
-			}
+		if (file->d_type == DT_DIR)
+		{
+			char path[128] = { 0 };
+			strcat(path, dirname);
+			strcat(path, "/");
+			strcat(path, file->d_name);
+
+			print_files(path);
 		}
 		file = readdir(dir);
 	}
